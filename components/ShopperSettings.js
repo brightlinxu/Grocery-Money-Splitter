@@ -1,28 +1,29 @@
 import styles from '../styles/ShopperSettings.module.css';
 
-const ShopperSettings = ({ shoppers, setShoppers }) => {
-
-  /*
-  const clearForms = () => {
-    const newShoppers = [...shoppers];
-    newShoppers.forEach((shopper) => {
-      shopper.formValue = '';
-    });
-    setShoppers(newShoppers);
-  }
-  */
+const ShopperSettings = ({ shoppers, setShoppers, handleCalculation }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // time for calculations here
-    
-    clearForms();
+    // tell index component to do calculations
+    handleCalculation();
   }
 
-  const handleChange = (event, shopperId) => {
+  const handleNameChange = (event, shopperId) => {
     const newShoppers = [...shoppers];
     newShoppers[shopperId].name = event.target.value;
+    setShoppers(newShoppers);
+  }
+
+  const handleVegeChange = (event, shopperId) => {
+    const newShoppers = [...shoppers];
+    newShoppers[shopperId].isVegetarian = event.target.checked;
+    setShoppers(newShoppers);
+  }
+
+  const handleExceptChange = (event, shopperId) => {
+    const newShoppers = [...shoppers];
+    newShoppers[shopperId].exception = event.target.value;
     setShoppers(newShoppers);
   }
 
@@ -31,9 +32,9 @@ const ShopperSettings = ({ shoppers, setShoppers }) => {
       <form className={styles.columns} onSubmit={(event) => handleSubmit(event)} autoComplete='off'>
         {shoppers.map((shopper, id) => (
           <div key={id}>
-            <input name={`name${id}`} type='text' value={shopper.name} onChange={(event) => handleChange(event, id)}/>
-            <input name={`isVegetarian${id}`} type='checkbox' />
-            <input name={`exceptions${id}`} type='number'/>
+            <input name={`name${id}`} type='text' value={shopper.name} onChange={(event) => handleNameChange(event, id)}/>
+            <input name={`isVegetarian${id}`} type='checkbox' value={shopper.isVegetarian} onChange={(event) => handleVegeChange(event, id)}/>
+            <input name={`exceptions${id}`} type='number' value={shopper.exception ? shopper.exception: ''} onChange={(event) => handleExceptChange(event, id)}/>
           </div>
         ))}
         <input type='submit' value='Calculate'/>
