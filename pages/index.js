@@ -1,22 +1,24 @@
 import { useState, useEffect } from "react";
 import DropdownMenu from '../components/DropdownMenu.js';
 import ShopperSettings from '../components/ShopperSettings.js';
+import { calculate } from '../utilities/calculate.js';
 import styles from '../styles/Index.module.css';
 
 const Index = () => {
   const [numShoppers, setNumShoppers] = useState(0);
   const [shoppers, setShoppers] = useState([]);
+  const [billData, setBillData] = useState({ total: 0, nonVeg: 0 });
 
   // new shopper
   const Shopper = {
     name: '',
     isVegetarian: false,
     exception: 0,
+    moneyToPay: 0,
   }
 
   const handleCalculation = () => {
-    console.log('handleCalculation');
-    
+    calculate(shoppers, setShoppers, billData);
   }
 
   useEffect(() => {
@@ -40,18 +42,33 @@ const Index = () => {
 
   }, [numShoppers]);
 
+  useEffect(() => {
+    console.log(shoppers);
+  }, [shoppers]);
+
 
   return (
     <div className={styles.container}>
       <DropdownMenu setNumShoppers={setNumShoppers}/>
-      {shoppers.length !== 0 && <ShopperSettings shoppers={shoppers} setShoppers={setShoppers} handleCalculation={handleCalculation}/>}
+      {
+      shoppers.length !== 0 && 
+      <ShopperSettings shoppers={shoppers} 
+        setShoppers={setShoppers} 
+        handleCalculation={handleCalculation}
+        billData={billData}
+        setBillData={setBillData}
+        />
+      }
       <div>
         {shoppers.map((shopper, id) => (
           <div key={id}>
-            {shopper.name}, {shopper.isVegetarian ? 'true' : 'false'}, {shopper.exception}
+            {shopper.name}: ${shopper.moneyToPay}
           </div>
         ))}
       </div>
+      {/*<div>
+        total bill: {billData.total}, nonVeg bill: {billData.nonVeg}
+      </div>*/}
     </div>
   )
 }
