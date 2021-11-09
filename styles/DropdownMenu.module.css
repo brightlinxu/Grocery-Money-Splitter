@@ -4,9 +4,10 @@
   justify-content: center;
   flex-direction: column;
   padding: 20px;
+  margin: 40px;
   cursor: pointer;
   border-radius: 5px;
 }
 .menu:hover {
-  background-color: lightgray;
+  background-color: #96C5AB;
 }

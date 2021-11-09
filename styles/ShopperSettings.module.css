@@ -1,3 +1,7 @@
+.container {
+  margin-top: 100px;
+}
+
 .columns {
   display: flex;
   align-items: center;
@@ -5,11 +9,75 @@
   flex-direction: column;
 }
 
-.test {
+.generalInputs {
+  display: block;
   border: none;
   outline: none;
+  box-shadow: rgb(53 64 102 / 30%) 0px 1px;
+  background-color: transparent !important;
   height: 40px;
+  width: 250px;
+  transition: linear 0.17s;
 }
-.test:focus {
-  background-color: lightblue;
+.generalInputs:focus {
+  box-shadow: rgb(53 64 102) 0px 2px;
+}
+.generalInputs:hover {
+  box-shadow: rgb(53 64 102) 0px 2px;
+}
+
+.headers {
+  margin-top: 50px;
+  height: 50px;
+}
+
+.shopperInputsContainer {
+  border-radius: 10px;
+  padding: 3px 10px 10px 10px;
+  cursor: text;
+  transition: linear 0.17s;
+}
+.shopperInputsContainer:hover {
+  background-color: #D7EBE0;
+}
+
+.shopperInput1 {
+  display: inline-block;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: rgb(53 64 102 / 30%) 0px 1px;
+  background-color: transparent !important;
+  height: 40px;
+  width: 150px;
+  transition: linear 0.17s;
+}
+.shopperInput1:focus {
+  box-shadow: rgb(53 64 102) 0px 2px;
+}
+.shopperInput1:hover {
+  box-shadow: rgb(53 64 102) 0px 2px;
+}
+
+.shopperInput2 {
+  margin: 0px 40px -10px 40px;
+  transition: linear 0.17s;
+}
+
+.shopperInput3 {
+  display: inline-block;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: rgb(53 64 102 / 30%) 0px 1px;
+  background-color: transparent !important;
+  height: 40px;
+  width: 80px;
+  transition: linear 0.17s;
+}
+.shopperInput3:focus {
+  box-shadow: rgb(53 64 102) 0px 2px;
+}
+.shopperInput3:hover {
+  box-shadow: rgb(53 64 102) 0px 2px;
 }

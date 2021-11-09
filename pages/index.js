@@ -49,6 +49,9 @@ const Index = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.title}>
+        Grocery Money Splitter
+      </div>
       <DropdownMenu setNumShoppers={setNumShoppers}/>
       {
       shoppers.length !== 0 && 
@@ -62,7 +65,7 @@ const Index = () => {
       <div>
         {shoppers.map((shopper, id) => (
           <div key={id}>
-            {shopper.name}: ${shopper.moneyToPay}
+            {shopper.name}: ${shopper.moneyToPay}, {shopper.isVegetarian ? 'true' : 'false'}
           </div>
         ))}
       </div>

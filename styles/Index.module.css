@@ -5,3 +5,11 @@
   flex-direction: column;
   padding: 20px;
 }
+
+.title {
+  font-size: 80px;
+  text-align: center;
+  margin: 40px;
+  font-weight: 550;
+  color: #00682F;
+}
