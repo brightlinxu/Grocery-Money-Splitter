@@ -1,5 +1,5 @@
 .container {
-  margin-top: 100px;
+  
 }
 
 .columns {
@@ -27,8 +27,24 @@
 }
 
 .headers {
-  margin-top: 50px;
-  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  height: 40px;
+  width: 415px;
+}
+
+.header1 {
+  display: inline-block;
+  margin-left: 30px;
+}
+.header2 {
+  display: inline-block;
+  margin-left: 50px;
+}
+.header3 {
+  display: inline-block;
+  margin-right: -25px;
 }
 
 .shopperInputsContainer {
@@ -49,7 +65,7 @@
   box-shadow: rgb(53 64 102 / 30%) 0px 1px;
   background-color: transparent !important;
   height: 40px;
-  width: 150px;
+  width: 120px;
   transition: linear 0.17s;
 }
 .shopperInput1:focus {
@@ -60,7 +76,7 @@
 }
 
 .shopperInput2 {
-  margin: 0px 40px -10px 40px;
+  margin: 0px 70px -10px 70px;
   transition: linear 0.17s;
 }
 
@@ -72,7 +88,7 @@
   box-shadow: rgb(53 64 102 / 30%) 0px 1px;
   background-color: transparent !important;
   height: 40px;
-  width: 80px;
+  width: 120px;
   transition: linear 0.17s;
 }
 .shopperInput3:focus {
@@ -80,4 +96,20 @@
 }
 .shopperInput3:hover {
   box-shadow: rgb(53 64 102) 0px 2px;
+}
+
+.submit {
+  height: 40px;
+  width: 120px;
+  margin: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #00682F;
+  color: white;
+  cursor: pointer;
+  transition: linear 0.1s;
+}
+.submit:hover {
+  transform: scale(1.05);
 }

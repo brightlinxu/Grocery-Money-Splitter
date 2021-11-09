@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 260px;
+}
+
+.numberContainer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 115px;
+}
+
+.number {
+  font-size: 20px;
+  font-weight: 550;
+  color: #00682F;
+}
+

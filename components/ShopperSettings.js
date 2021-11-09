@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
 import FadeIn from 'react-fade-in';
 import styles from '../styles/ShopperSettings.module.css';
 
 const ShopperSettings = ({ shoppers, setShoppers, handleCalculation, billData, setBillData }) => {
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -46,7 +46,15 @@ const ShopperSettings = ({ shoppers, setShoppers, handleCalculation, billData, s
           <input className={styles.generalInputs} name='totalBill' type='number' step='0.01' placeholder='Enter total bill here... ($)' value={billData.total !== 0 ? billData.total : ''} onChange={(event) => handleTotalChange(event)}/>
           <input className={styles.generalInputs} name='nonVegBill' type='number' step='0.01' placeholder='Enter non-vegetarian bill here... ($)' value={billData.nonVeg !== 0 ? billData.nonVeg : ''} onChange={(event) => handleNVChange(event)}/>
           <div className={styles.headers}>
-            
+            <div className={styles.header1}>
+              Name:
+            </div>
+            <div className={styles.header2}>
+              Vegetarian:
+            </div>
+            <div className={styles.header3}>
+              Extra Personal Costs:
+            </div>
           </div>
           {shoppers.map((shopper, id) => (
             <div key={id} className={styles.shopperInputsContainer}>
@@ -55,8 +63,8 @@ const ShopperSettings = ({ shoppers, setShoppers, handleCalculation, billData, s
               <input className={styles.shopperInput3} name={`exceptions${id}`} type='number' step='0.01' placeholder='0' value={shopper.exception !== 0 ? shopper.exception: ''} onChange={(event) => handleExceptChange(event, id)}/>
             </div>
           ))}
+          <input className={styles.submit} type='submit' value='Calculate'/>
         </FadeIn>
-        <input type='submit' value='Calculate'/>
       </form>
     </div>
   );

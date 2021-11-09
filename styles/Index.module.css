@@ -9,7 +9,24 @@
 .title {
   font-size: 80px;
   text-align: center;
-  margin: 40px;
+  margin: 20px 10px;
   font-weight: 550;
   color: #00682F;
+}
+
+@media screen and (max-width: 700px) {
+  .inputsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 560px;
+  }
+}
+@media screen and (min-width: 700px) {
+  .inputsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 650px;
+  }
 }
