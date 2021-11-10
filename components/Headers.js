@@ -27,7 +27,7 @@ const Headers = () => {
       <div className={styles.header1} onMouseEnter={() => handleEnter(0)} onMouseLeave={() => handleLeave(0)} onmouse>
         <div style={{
             opacity: `${hover[0] ? 1 : 0}`, 
-            transform: `${hover[0] ? 'scale(1)' : 'scale(0.1)'}`,
+            transform: `${hover[0] ? scale(1) : scale(0.1)}`,
             top: `${hover[0] ? -70 : -35}px`
           }} 
           className={styles.bubble1}
@@ -40,7 +40,7 @@ const Headers = () => {
       <div className={styles.header2} onMouseEnter={() => handleEnter(1)} onMouseLeave={() => handleLeave(1)}>
         <div style={{
             opacity: `${hover[1] ? 1 : 0}`,
-            transform: `${hover[1] ? 'scale(1)' : 'scale(0.1)'}`,
+            transform: `${hover[1] ? scale(1) : scale(0.1)}`,
             top: `${hover[1] ? -70 : -35}px`
           }} 
           className={styles.bubble2}
@@ -53,7 +53,7 @@ const Headers = () => {
       <div className={styles.header3} onMouseEnter={() => handleEnter(2)} onMouseLeave={() => handleLeave(2)}>
         <div style={{
             opacity: `${hover[2] ? 1 : 0}`,
-            transform: `${hover[2] ? 'scale(1)' : 'scale(0.1)'}`,
+            transform: `${hover[2] ? scale(1) : scale(0.1)}`,
             top: `${hover[2] ? -87.7 : -45}px`,
           }} 
           className={styles.bubble3}
