@@ -24,7 +24,7 @@ const Headers = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header1} onMouseEnter={() => handleEnter(0)} onMouseLeave={() => handleLeave(0)}>
+      <div className={styles.header1} onMouseEnter={() => handleEnter(0)} onMouseLeave={() => handleLeave(0)} onmouse>
         <div style={{
             opacity: `${hover[0] ? 1 : 0}`, 
             transform: `${hover[0] ? 'scale(1)' : 'scale(0.1)'}`,
@@ -46,7 +46,7 @@ const Headers = () => {
           className={styles.bubble2}
           onMouseEnter={() => handleHoverFix(1)}
         >
-          Check if shopper is vegetarian
+          Select if shopper is vegetarian
         </div>
         Vegetarian:
       </div>
