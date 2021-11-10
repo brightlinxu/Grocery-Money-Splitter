@@ -1,5 +1,6 @@
 import { Fade } from "react-awesome-reveal";
 import FadeIn from 'react-fade-in';
+import Headers from '../components/Headers.js';
 import styles from '../styles/ShopperSettings.module.css';
 
 const ShopperSettings = ({ shoppers, setShoppers, handleCalculation, billData, setBillData }) => {
@@ -66,17 +67,7 @@ const ShopperSettings = ({ shoppers, setShoppers, handleCalculation, billData, s
             onWheel={(e) => e.target.blur()} 
             onKeyDown={(e) => handleKeyDown(e)}
           />
-          <div className={styles.headers}>
-            <div className={styles.header1}>
-              Name:
-            </div>
-            <div className={styles.header2}>
-              Vegetarian:
-            </div>
-            <div className={styles.header3}>
-              Extra Personal Costs:
-            </div>
-          </div>
+          <Headers />
           {shoppers.map((shopper, id) => (
             <div key={id} className={styles.shopperInputsContainer}>
               <input className={styles.shopperInput1} 

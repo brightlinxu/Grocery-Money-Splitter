@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 22px;
+  width: 415px;
+}
+
+.header1 {
+  position: relative;
+  display: inline-block;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: 0.15s linear;
+}
+
+.header2 {
+  position: relative;
+  display: inline-block;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.header3 {
+  position: relative;
+  display: inline-block;
+  margin-right: -25px;
+  cursor: pointer;
+}
+
+.bubble1 {
+  position: absolute;
+  left: -55px;
+  white-space: nowrap;
+  background-color: #D7EBE0;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: default;
+  z-index: 20;
+  transition: opacity .15s linear;
+  transition: 0.13s linear;
+}
+.bubble2 {
+  position: absolute;
+  left: -90px;
+  white-space: nowrap;
+  background-color: #D7EBE0;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: default;
+  z-index: 20;
+  transition: opacity .15s linear;
+  transition: 0.13s linear;
+}
+.bubble3 {
+  position: absolute;
+  width: 225px;
+  left: -35px;
+  text-align: center;
+  background-color: #D7EBE0;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: default;
+  z-index: 20;
+  transition: opacity .15s linear;
+  transition: 0.13s linear;
+}
