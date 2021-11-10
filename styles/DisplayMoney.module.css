@@ -1,0 +1,52 @@
+.container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #D7EBE0;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 650px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.shopperList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20px 0px 20px;
+}
+
+.nameContainer {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+}
+
+.moneyContainer {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  border-left: 1px solid rgb(53 64 102 / 30%);
+}
+
+.eltSpacing {
+  margin: 10px 0px;
+}
+
+.scrollPos {
+  position: absolute;
+  top: 50%;
+  height: 50vh;
+  width: 1px;
+}

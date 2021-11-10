@@ -1,15 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ShopperSettings from '../components/ShopperSettings.js';
 import ShopperSlider from '../components/ShopperSlider.js';
+import DisplayMoney from '../components/DisplayMoney.js';
 import { calculate } from '../utilities/calculate.js';
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
+import 'animate.css';
 import styles from '../styles/Index.module.css';
 
 const Index = () => {
+  // my states
   const [numShoppers, setNumShoppers] = useState(4);
   const [shoppers, setShoppers] = useState([]);
   const [billData, setBillData] = useState({ total: 0, nonVeg: 0 });
   const [changeInputs, setChangeInputs] = useState(true);
+  const [calculated, setCalculated] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
   // new shopper
   const Shopper = {
@@ -20,8 +25,11 @@ const Index = () => {
   }
 
   const handleCalculation = () => {
+    setCalculated(true);
     calculate(shoppers, setShoppers, billData);
+    setScroll(true);
   }
+
 
   useEffect(() => {
     if (changeInputs) {
@@ -42,23 +50,27 @@ const Index = () => {
         newShoppers = newShoppers.slice(0, numShoppers);
         setShoppers(newShoppers);
       }
+      setChangeInputs(false);
     }
-
   }, [changeInputs]);
 
 
   return (
     <div className={styles.container}>
-      <Fade direction={'down'} duration={700} triggerOnce>
+      <div className={'animate__animated animate__fadeInDown animate__faster'}>
         <div className={styles.title}>
           Grocery Money Splitter
         </div>
-      </Fade>
+      </div>
       <div className={styles.inputsContainer}>
-        <Fade direction={'left'} duration={700} triggerOnce>
-          <ShopperSlider numShoppers={numShoppers} setNumShoppers={setNumShoppers} setChangeInputs={setChangeInputs}/>
-        </Fade>
-        <Fade direction={'right'} duration={650} triggerOnce>
+        <div className={'animate__animated animate__fadeInLeft animate__faster'}>
+          <ShopperSlider numShoppers={numShoppers} 
+            setNumShoppers={setNumShoppers} 
+            setChangeInputs={setChangeInputs} 
+            handleCalculation={handleCalculation}
+          />
+        </div>
+        <div className={'animate__animated animate__fadeInRight animate__faster'}>
           <div>
             {
             shoppers.length !== 0 && 
@@ -70,26 +82,12 @@ const Index = () => {
               />
             }
           </div>
-        </Fade>
+        </div>
       </div>
-      
-      {/*
-      <div>
-        {shoppers.map((shopper, id) => (
-          <div key={id}>
-            {shopper.name}: ${shopper.moneyToPay}, {shopper.isVegetarian ? 'true' : 'false'}
-          </div>
-        ))}
+      <div className={styles.break}/>
+      <div className={'animate__animated animate__fadeInUp animate__faster'}>
+        <DisplayMoney shoppers={shoppers} calculated={calculated} scroll={scroll} setScroll={setScroll}/>
       </div>
-      */}
-
-      {/*
-      <DropdownMenu setNumShoppers={setNumShoppers}/>
-      */}
-      
-      {/*<div>
-        total bill: {billData.total}, nonVeg bill: {billData.nonVeg}
-      </div>*/}
     </div>
   )
 }
