@@ -12,19 +12,17 @@ const Headers = () => {
 
   const handleLeave = (headerId) => {
     const newHover = [...hover];
-    newHover[headerId] = false;
-    setHover(newHover);
+    setHover(newHover.map(() => false));
   }
 
   const handleHoverFix = (headerId) => {
     const newHover = [...hover];
-    newHover[headerId] = false;
-    setHover(newHover);
+    setHover(newHover.map(() => false));
   }
 
   return (
     <div className={styles.container}>
-      <div className={styles.header1} onMouseEnter={() => handleEnter(0)} onMouseLeave={() => handleLeave(0)} onmouse>
+      <div className={styles.header1} onMouseEnter={() => handleEnter(0)} onMouseLeave={() => handleLeave(0)}>
         <div style={{
             opacity: `${hover[0] ? 1 : 0}`, 
             transform: `scale(${hover[0] ? 1 : 0.1})`,
@@ -57,7 +55,7 @@ const Headers = () => {
             top: `${hover[2] ? -87.7 : -45}px`,
           }} 
           className={styles.bubble3}
-          onMouseEnter={() => handleHoverFix(1)}
+          onMouseEnter={() => handleHoverFix(2)}
         >
           Cost of anything shopper bought individually
         </div>
