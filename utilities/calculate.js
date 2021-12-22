@@ -2,7 +2,7 @@ export const calculate = (shoppers, setShoppers, billData) => {
   const getTotalExcept = () => {
     let sum = 0;
     shoppers.forEach((shopper) => {
-      sum += shopper.exception;
+      sum += parseInt(shopper.exception);
     });
 
     return sum;
@@ -32,6 +32,7 @@ export const calculate = (shoppers, setShoppers, billData) => {
       nonVegCost = (billData.nonVeg / numNonVeg);
     }
     let totalMoney = vegCost + nonVegCost + parseFloat(shopper.exception);
+    console.log(getTotalExcept())
 
     const newShoppers = [...shoppers];
     newShoppers[id].moneyToPay = totalMoney.toFixed(2);
