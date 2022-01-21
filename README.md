@@ -1,4 +1,4 @@
-Hey everyone! This is an app that devides grocery bills. [Link to web page](https://groceries.brightxu.com/)
+Hey everyone! This is an app that devides grocery bills -> [link to web page](https://groceries.brightxu.com/)
 
 I hope you find it useful and feel free to let me know if there's anything you want me to add or if anything isn't working properly.
 
