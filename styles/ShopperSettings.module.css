@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 480px;
 }
 
 .generalInputs {
@@ -73,7 +72,6 @@
 }
 
 .shopperInput2 {
-  margin: 0px 70px -10px 70px;
   transition: linear 0.17s;
 }
 
@@ -93,4 +91,15 @@
 }
 .shopperInput3:hover {
   box-shadow: rgb(53 64 102) 0px 2px;
+}
+
+@media screen and (max-width: 725px) {
+  .shopperInput2 {
+    margin: 0px 50px -10px 50px;
+  }
+}
+@media screen and (min-width: 725px) {
+  .shopperInput2 {
+    margin: 0px 70px -10px 70px;
+  }
 }

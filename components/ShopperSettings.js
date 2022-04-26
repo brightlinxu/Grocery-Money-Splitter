@@ -50,48 +50,48 @@ const ShopperSettings = ({ shoppers, setShoppers, handleCalculation, billData, s
     <div>
       <form onSubmit={(event) => handleSubmit(event)} autoComplete='off'>
         <div className={styles.columns}>
-        <FadeIn delay={30} className={styles.columns}>
-          <input className={styles.generalInputs} 
-            name='totalBill' type='number' step='0.01' 
-            placeholder='Enter total bill here... ($)' 
-            value={billData.total !== 0 ? billData.total : ''} 
-            onChange={(event) => handleTotalChange(event)} 
-            onWheel={(e) => e.target.blur()} 
-            onKeyDown={(e) => handleKeyDown(e)}
-          />
-          <input className={styles.generalInputs} 
-            name='nonVegBill' type='number' step='0.01' 
-            placeholder='Enter non-vegetarian bill here... ($)' 
-            value={billData.nonVeg !== 0 ? billData.nonVeg : ''} 
-            onChange={(event) => handleNVChange(event)} 
-            onWheel={(e) => e.target.blur()} 
-            onKeyDown={(e) => handleKeyDown(e)}
-          />
-          <Headers />
-          {shoppers.map((shopper, id) => (
-            <div key={id} className={styles.shopperInputsContainer}>
-              <input className={styles.shopperInput1} 
-                name={`name${id}`} type='text' 
-                placeholder={`Shopper ${id + 1}`} 
-                value={shopper.name} 
-                onChange={(event) => handleNameChange(event, id)}
-              />
-              <input className={styles.shopperInput2} 
-                name={`isVegetarian${id}`} type='checkbox' 
-                value={shopper.isVegetarian} 
-                onChange={(event) => handleVegeChange(event, id)}
-              />
-              <input className={styles.shopperInput3} 
-                name={`exceptions${id}`} type='number' 
-                step='0.01' placeholder='0' 
-                value={shopper.exception !== 0 ? shopper.exception: ''} 
-                onChange={(event) => handleExceptChange(event, id)} 
-                onWheel={(e) => e.target.blur()} 
-                onKeyDown={(e) => handleKeyDown(e)}
-              />
-            </div>
-          ))}
-        </FadeIn>
+          <FadeIn delay={30} className={styles.columns}>
+            <input className={styles.generalInputs}
+              name='totalBill' type='number' step='0.01'
+              placeholder='Enter total bill here... ($)'
+              value={billData.total !== 0 ? billData.total : ''}
+              onChange={(event) => handleTotalChange(event)}
+              onWheel={(e) => e.target.blur()}
+              onKeyDown={(e) => handleKeyDown(e)}
+            />
+            <input className={styles.generalInputs}
+              name='nonVegBill' type='number' step='0.01'
+              placeholder='Enter non-vegetarian bill here... ($)'
+              value={billData.nonVeg !== 0 ? billData.nonVeg : ''}
+              onChange={(event) => handleNVChange(event)}
+              onWheel={(e) => e.target.blur()}
+              onKeyDown={(e) => handleKeyDown(e)}
+            />
+            <Headers />
+            {shoppers.map((shopper, id) => (
+              <div key={id} className={styles.shopperInputsContainer}>
+                <input className={styles.shopperInput1}
+                  name={`name${id}`} type='text'
+                  placeholder={`Shopper ${id + 1}`}
+                  value={shopper.name}
+                  onChange={(event) => handleNameChange(event, id)}
+                />
+                <input className={styles.shopperInput2}
+                  name={`isVegetarian${id}`} type='checkbox'
+                  value={shopper.isVegetarian}
+                  onChange={(event) => handleVegeChange(event, id)}
+                />
+                <input className={styles.shopperInput3}
+                  name={`exceptions${id}`} type='number'
+                  step='0.01' placeholder='0'
+                  value={shopper.exception !== 0 ? shopper.exception: ''}
+                  onChange={(event) => handleExceptChange(event, id)}
+                  onWheel={(e) => e.target.blur()}
+                  onKeyDown={(e) => handleKeyDown(e)}
+                />
+              </div>
+            ))}
+          </FadeIn>
         </div>
       </form>
     </div>
