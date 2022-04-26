@@ -57,6 +57,7 @@
   display: inline-block;
   text-align: center;
   border: none;
+  border-radius: 0;
   outline: none;
   border-bottom: 1px solid rgb(53 64 102 / 30%);
   background-color: transparent !important;
@@ -79,6 +80,7 @@
   display: inline-block;
   text-align: center;
   border: none;
+  border-radius: 0;
   outline: none;
   border-bottom: 1px solid rgb(53 64 102 / 0.3);
   background-color: transparent !important;
