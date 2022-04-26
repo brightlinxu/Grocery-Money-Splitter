@@ -72,7 +72,7 @@ input[type="checkbox"]:checked:after{
     transform: translateY(-5px);
 }
 .fade-enter-active {
-    transition: all 0.8s ease-out;
+    transition: 0.7s ease-out;
     opacity: 1;
     transform: translateY(0px);
 }
@@ -81,7 +81,7 @@ input[type="checkbox"]:checked:after{
     transform: translateY(0px);
 }
 .fade-exit-active {
-    transition: all 0.8s ease-out;
+    transition: 0.7s ease-out;
     opacity: 0;
     transform: translateY(-5px);
 }

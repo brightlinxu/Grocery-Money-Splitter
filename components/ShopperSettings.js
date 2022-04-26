@@ -78,7 +78,7 @@ const ShopperSettings = ({ shoppers, setShoppers, handleCalculation, billData, s
           <Headers />
           <TransitionGroup component='div'>
             {shoppers.map((shopper, id) => (
-              <CSSTransition key={id} timeout={800} classNames={'fade'}>
+              <CSSTransition key={id} timeout={700} classNames={'fade'}>
                 <div key={id} className={styles.shopperInputsContainer}>
                   <input className={styles.shopperInput1}
                     name={`name${id}`} type='text'
