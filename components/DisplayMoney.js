@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { scrollIntoView } from "seamless-scroll-polyfill";
 import styles from '../styles/DisplayMoney.module.css';
 
 const DisplayMoney = ({ shoppers, calculated, scroll, setScroll }) => {
@@ -8,7 +9,7 @@ const DisplayMoney = ({ shoppers, calculated, scroll, setScroll }) => {
   useEffect(() => {
     if (scroll) {
       setTimeout(() => {
-        scrollRef.current.scrollIntoView({behavior: 'smooth'});
+        scrollIntoView(scrollRef.current, {behavior: 'smooth'});
       }, 30);
       setScroll(false);
     }
