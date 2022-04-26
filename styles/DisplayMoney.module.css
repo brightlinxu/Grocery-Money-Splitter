@@ -52,7 +52,7 @@
 
 @media screen and (max-width: 725px) {
   .container {
-    width: 480px;
+    width: 340px;
   }
 }
 @media screen and (min-width: 725px) {
