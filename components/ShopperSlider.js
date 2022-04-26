@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Slider from 'react-input-slider';
 import styles from '../styles/ShopperSlider.module.css';
 
-const ShopperSlider = ({ numShoppers, setNumShoppers, setChangeInputs, handleCalculation }) => {
+const ShopperSlider = ({ numShoppers, setNumShoppers, setChangeInputs }) => {
   const [state, setState] = useState({ y: numShoppers });
 
   const sliderStyle = {
@@ -29,9 +29,6 @@ const ShopperSlider = ({ numShoppers, setNumShoppers, setChangeInputs, handleCal
       <Slider styles={sliderStyle} axis='y' ymin={2} ymax={15} y={state.y} onChange={setState} 
         onDragEnd={() => setChangeInputs(true)}
       />
-      <button className={`${styles.submit} ${styles.submitWidth}`} onClick={() => handleCalculation()}>
-        Calculate
-      </button>
     </div>
   );
 }

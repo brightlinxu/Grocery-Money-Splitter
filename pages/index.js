@@ -6,6 +6,7 @@ import { calculate } from '../utilities/calculate.js';
 import { Fade } from "react-awesome-reveal";
 import 'animate.css';
 import styles from '../styles/Index.module.css';
+import { getWindowSize } from "../utilities/getWindowSize";
 
 const Index = () => {
   // my states
@@ -30,6 +31,10 @@ const Index = () => {
     setScroll(true);
   }
 
+  const isMobileWindow = () => {
+    return getWindowSize().width < 725;
+  }
+
 
   useEffect(() => {
     if (changeInputs) {
@@ -46,7 +51,7 @@ const Index = () => {
       }
       else if (numShoppers < shoppers.length) {
         // remove some shoppers
-        const newShoppers = [...shoppers];
+        let newShoppers = [...shoppers];
         newShoppers = newShoppers.slice(0, numShoppers);
         setShoppers(newShoppers);
       }
@@ -64,11 +69,18 @@ const Index = () => {
       </div>
       <div className={styles.inputsContainer}>
         <div className={'animate__animated animate__fadeInLeft animate__faster'}>
-          <ShopperSlider numShoppers={numShoppers} 
-            setNumShoppers={setNumShoppers} 
-            setChangeInputs={setChangeInputs} 
-            handleCalculation={handleCalculation}
-          />
+          <div className={styles.sliderSubmitContainer}>
+            <ShopperSlider numShoppers={numShoppers}
+              setNumShoppers={setNumShoppers}
+              setChangeInputs={setChangeInputs}
+            />
+            {
+              !isMobileWindow() &&
+              <button className={`${styles.submit} ${styles.submitWidth}`} onClick={() => handleCalculation()}>
+                Calculate
+              </button>
+            }
+          </div>
         </div>
         <div className={'animate__animated animate__fadeInRight animate__faster'}>
           <div>

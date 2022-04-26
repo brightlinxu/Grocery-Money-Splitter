@@ -19,33 +19,3 @@
   font-weight: 550;
   color: #00682F;
 }
-
-.submit {
-  height: 40px;
-  width: 120px;
-  margin-top: 35px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  background-color: #00682F;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: linear 0.1s;
-}
-.submit:hover {
-  transform: scale(1.05);
-}
-
-@media screen and (max-width: 750px) {
-  .submitWidth {
-    width: 90px;
-  }
-}
-@media screen and (min-width: 750px) {
-  .submitWidth {
-    width: 120px;
-  }
-}
-
