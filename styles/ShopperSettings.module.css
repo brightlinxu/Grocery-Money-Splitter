@@ -59,10 +59,13 @@
   border: none;
   border-radius: 0;
   outline: none;
+  /*border: 1px solid black;*/
   border-bottom: 1px solid rgb(53 64 102 / 30%);
   background-color: transparent !important;
   height: 40px;
   width: 120px;
+  padding-top: 5px;
+  font-size: 15px;
   transition: linear 0.17s;
 }
 .shopperInput1:focus {
@@ -86,6 +89,8 @@
   background-color: transparent !important;
   height: 40px;
   width: 120px;
+  padding-top: 5px;
+  font-size: 15px;
   transition: linear 0.17s;
 }
 .shopperInput3:focus {
@@ -97,12 +102,12 @@
 
 @media screen and (max-width: 724px) {
   .shopperInput2 {
-    margin: 0px 22px -10px 22px;
+    margin: 0px 22px -6px 22px;
   }
 }
 @media screen and (min-width: 725px) {
   .shopperInput2 {
-    margin: 0px 70px -10px 70px;
+    margin: 0px 70px -6px 70px;
   }
 }
 
