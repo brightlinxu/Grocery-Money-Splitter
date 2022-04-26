@@ -51,22 +51,30 @@ const ShopperSettings = ({ shoppers, setShoppers, handleCalculation, billData, s
       <form onSubmit={(event) => handleSubmit(event)} autoComplete='off'>
         <div className={styles.columns}>
           <FadeIn delay={30} className={styles.columns}>
-            <input className={styles.generalInputs}
-              name='totalBill' type='number' step='0.01'
-              placeholder='Enter total bill here... ($)'
-              value={billData.total !== 0 ? billData.total : ''}
-              onChange={(event) => handleTotalChange(event)}
-              onWheel={(e) => e.target.blur()}
-              onKeyDown={(e) => handleKeyDown(e)}
-            />
-            <input className={styles.generalInputs}
-              name='nonVegBill' type='number' step='0.01'
-              placeholder='Enter non-vegetarian bill here... ($)'
-              value={billData.nonVeg !== 0 ? billData.nonVeg : ''}
-              onChange={(event) => handleNVChange(event)}
-              onWheel={(e) => e.target.blur()}
-              onKeyDown={(e) => handleKeyDown(e)}
-            />
+            <div className={styles.floatingInput}>
+              <input
+                name='totalBill' type='number' step='0.01'
+                value={billData.total !== 0 ? billData.total : ''}
+                onChange={(event) => handleTotalChange(event)}
+                onWheel={(e) => e.target.blur()}
+                onKeyDown={(e) => handleKeyDown(e)}
+              />
+              <label className={billData.total && styles.filled}>
+                Enter total bill... ($)
+              </label>
+            </div>
+            <div className={styles.floatingInput}>
+              <input
+                  name='nonVegBill' type='number' step='0.01'
+                  value={billData.nonVeg !== 0 ? billData.nonVeg : ''}
+                  onChange={(event) => handleNVChange(event)}
+                  onWheel={(e) => e.target.blur()}
+                  onKeyDown={(e) => handleKeyDown(e)}
+              />
+              <label className={billData.nonVeg && styles.filled}>
+                Enter non-vegetarian bill... ($)
+              </label>
+            </div>
             <Headers />
             {shoppers.map((shopper, id) => (
               <div key={id} className={styles.shopperInputsContainer}>

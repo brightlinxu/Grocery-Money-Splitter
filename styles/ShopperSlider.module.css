@@ -5,7 +5,7 @@
   flex-direction: column;
   margin-top: 20px;
 }
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 724px) {
   .container {
     height: 60px;
     margin-bottom: 40px;
