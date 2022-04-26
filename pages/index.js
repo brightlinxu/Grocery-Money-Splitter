@@ -71,8 +71,9 @@ const Index = () => {
         <div className={'animate__animated animate__fadeInLeft animate__faster'}>
           <div className={styles.sliderSubmitContainer}>
             <ShopperSlider numShoppers={numShoppers}
-              setNumShoppers={setNumShoppers}
-              setChangeInputs={setChangeInputs}
+                           setNumShoppers={setNumShoppers}
+                           setChangeInputs={setChangeInputs}
+                           isMobileWindow={isMobileWindow()}
             />
             {
               !isMobileWindow() &&
@@ -96,6 +97,12 @@ const Index = () => {
           </div>
         </div>
       </div>
+      {
+          isMobileWindow() &&
+          <button className={`${styles.submit} ${styles.submitWidth}`} onClick={() => handleCalculation()}>
+            Calculate
+          </button>
+      }
       <div className={styles.break}/>
       <div className={'animate__animated animate__fadeInUp animate__faster'}>
         <DisplayMoney shoppers={shoppers} calculated={calculated} scroll={scroll} setScroll={setScroll}/>
