@@ -68,7 +68,7 @@ const Index = () => {
         </div>
       </div>
       <div className={styles.inputsContainer}>
-        <div className={'animate__animated animate__fadeInLeft animate__faster'}>
+        <div className={`animate__animated ${isMobileWindow() ? 'animate__fadeInUp' : 'animate__fadeInLeft'} animate__faster`}>
           <div className={styles.sliderSubmitContainer}>
             <ShopperSlider numShoppers={numShoppers}
                            setNumShoppers={setNumShoppers}
@@ -83,7 +83,7 @@ const Index = () => {
             }
           </div>
         </div>
-        <div className={'animate__animated animate__fadeInRight animate__faster'}>
+        <div className={`animate__animated ${isMobileWindow() ? 'animate__fadeInUp' : 'animate__fadeInRight'} animate__faster`}>
           <div>
             {
             shoppers.length !== 0 && 
@@ -97,12 +97,14 @@ const Index = () => {
           </div>
         </div>
       </div>
-      {
+      <div className={'animate__animated animate__fadeInUp animate__faster'}>
+        {
           isMobileWindow() &&
-          <button className={`${styles.submit} ${styles.submitWidth}`} onClick={() => handleCalculation()}>
-            Calculate
-          </button>
-      }
+            <button className={`${styles.submit} ${styles.submitWidth}`} onClick={() => handleCalculation()}>
+              Calculate
+            </button>
+        }
+      </div>
       <div className={styles.break}/>
       <div className={'animate__animated animate__fadeInUp animate__faster'}>
         <DisplayMoney shoppers={shoppers} calculated={calculated} scroll={scroll} setScroll={setScroll}/>
